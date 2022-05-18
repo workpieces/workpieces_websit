@@ -28,8 +28,8 @@ class MyHomePage extends StatelessWidget {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                Color.fromRGBO(195, 20, 50, 1.0),
-                Color.fromRGBO(36, 11, 54, 1.0)
+                Color.fromARGB(255, 20, 105, 195),
+                Color.fromARGB(255, 23, 11, 54)
               ]),
         ),
         child: SingleChildScrollView(
