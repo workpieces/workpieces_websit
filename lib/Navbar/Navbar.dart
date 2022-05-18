@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_workpieces/constant/constant.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Navbar extends StatelessWidget {
   @override
@@ -43,7 +45,7 @@ class HomeWebNavbar extends StatelessWidget {
                   width: 30,
                 ),
                 Text(
-                  "文档",
+                  "资源下载",
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
@@ -59,14 +61,18 @@ class HomeWebNavbar extends StatelessWidget {
                   width: 30,
                 ),
                 MaterialButton(
-                  color: Colors.red,
+                  color: Colors.lightGreen,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                  onPressed: () {},
+                      borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                  onPressed: () {
+                    launch(GITHUB);
+                  },
                   child: Text(
-                    "使用软件",
+                    "Github",
                     style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 )
               ],
@@ -106,6 +112,14 @@ class HomeMobileNavbar extends StatelessWidget {
                 ),
                 Text(
                   "文档",
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                Text(
+                  "资源下载",
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
