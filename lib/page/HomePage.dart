@@ -36,19 +36,15 @@ class HomePage extends StatelessWidget {
                       launch(APPLESTORE);
                     },
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 20.0, horizontal: 40.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Text(
                         "Apple Store 下载",
-                        style: TextStyle(
-                            color: Colors.green,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                        style: TextStyle(color: Colors.green, fontSize: 20),
                       ),
                     ),
                   ),
                   SizedBox(
-                    width: 44.0,
+                    width: 30.0,
                   ),
                   MaterialButton(
                     color: Colors.white,
@@ -58,14 +54,10 @@ class HomePage extends StatelessWidget {
                       launch(DMG);
                     },
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 20.0, horizontal: 40.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Text(
                         "DMG 下载",
-                        style: TextStyle(
-                            color: Colors.green,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                        style: TextStyle(color: Colors.green, fontSize: 20),
                       ),
                     ),
                   ),
@@ -82,7 +74,7 @@ class HomePage extends StatelessWidget {
             child: Image.asset(
               "assets/images/etcd_image.png",
               fit: BoxFit.fitHeight,
-              height: 350,
+              height: 300,
             ),
           ))
     ];
@@ -97,6 +89,52 @@ class HomePage extends StatelessWidget {
           children: pageChildren(),
         );
       },
+    );
+  }
+}
+
+class SmallHomePage extends StatelessWidget {
+  const SmallHomePage({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            ETCDNAME,
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 40.0,
+                color: Colors.white),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            child: Text(
+              ETCDDESC,
+              style: TextStyle(fontSize: 16.0, color: Colors.white),
+            ),
+          ),
+          MaterialButton(
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20.0))),
+            onPressed: () {
+              launch(APPLESTORE);
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                "Apple Store 下载",
+                style: TextStyle(color: Colors.green, fontSize: 20),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

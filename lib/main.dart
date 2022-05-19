@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_workpieces/page/HomePage.dart';
+import 'package:flutter_workpieces/widgets/bottombar.dart';
 import 'package:flutter_workpieces/widgets/constant.dart';
 import 'package:flutter_workpieces/widgets/navbar.dart';
 import 'package:flutter_workpieces/widgets/responsive.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MyApp());
 
@@ -59,9 +61,12 @@ class MyHomePage extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    vertical: 20.0, horizontal: 40.0),
-                child: HomePage(),
+                    vertical: 80.0, horizontal: 40.0),
+                child: ResponsiveWidget.isSmallScreen(context)
+                    ? SmallHomePage()
+                    : HomePage(),
               ),
+              // BottomBar(),
             ],
           ),
         ),
