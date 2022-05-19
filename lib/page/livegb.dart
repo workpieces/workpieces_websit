@@ -38,6 +38,13 @@ class LiveGBPage extends StatelessWidget {
                   style: TextStyle(fontSize: 16.0, color: Colors.white),
                 ),
               ),
+              Text(
+                LIVETITLE,
+                style: TextStyle(fontSize: 14.0, color: Colors.orangeAccent),
+              ),
+              SizedBox(
+                height: 30,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -49,7 +56,7 @@ class LiveGBPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
-                        "ARM 安装",
+                        "ARM 下载",
                         style: TextStyle(color: Colors.green, fontSize: 20),
                       ),
                     ),
@@ -65,7 +72,7 @@ class LiveGBPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
-                        "AMD 安装",
+                        "AMD 下载",
                         style: TextStyle(color: Colors.green, fontSize: 20),
                       ),
                     ),
@@ -97,7 +104,7 @@ class LiveGBPage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
             child: Image.asset(
-              "assets/images/etcd_image.png",
+              "assets/images/livegb_image.png",
               fit: BoxFit.fitHeight,
               height: 300,
             ),
@@ -148,6 +155,13 @@ class SmallLiveGBPage extends StatelessWidget {
                 style: TextStyle(fontSize: 14.0, color: Colors.orangeAccent),
               ),
             ],
+          ),
+          Text(
+            LIVETITLE,
+            style: TextStyle(fontSize: 14.0, color: Colors.orangeAccent),
+          ),
+          SizedBox(
+            height: 30,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),

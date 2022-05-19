@@ -59,6 +59,7 @@ class MyHomePage extends StatelessWidget {
         child: SingleChildScrollView(
           physics: ClampingScrollPhysics(),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.symmetric(

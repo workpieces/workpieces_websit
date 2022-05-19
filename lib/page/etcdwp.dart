@@ -38,6 +38,9 @@ class EtcdWpPage extends StatelessWidget {
                   style: TextStyle(fontSize: 16.0, color: Colors.white),
                 ),
               ),
+              SizedBox(
+                height: 30,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -143,6 +146,9 @@ class SmallEtcdwpPage extends StatelessWidget {
               ETCDDESC,
               style: TextStyle(fontSize: 16.0, color: Colors.white),
             ),
+          ),
+          SizedBox(
+            height: 30,
           ),
           MaterialButton(
             color: Colors.white,

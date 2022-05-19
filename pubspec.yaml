@@ -20,6 +20,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/etcd_image.png
+    - assets/images/livegb_image.png
 
   fonts:
     - family: Montserrat
