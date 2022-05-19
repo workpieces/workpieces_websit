@@ -13,11 +13,17 @@ class BottomBar extends StatelessWidget {
       child: ResponsiveWidget.isSmallScreen(context)
           ? Column(
               children: [
+                SizedBox(
+                  height: 20,
+                ),
                 Center(
                   child: Text(
                     COPYRIGHT,
                     style: TextStyle(fontSize: 10, color: Colors.white),
                   ),
+                ),
+                SizedBox(
+                  height: 20,
                 ),
               ],
             )

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_workpieces/widgets/constant.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-class EtcdWpPage extends StatelessWidget {
+class LiveGBPage extends StatelessWidget {
   List<Widget> pageChildren() {
     return <Widget>[
       Expanded(
@@ -16,7 +15,7 @@ class EtcdWpPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    ETCDNAME,
+                    LIVEGBNAME,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 40.0,
@@ -26,15 +25,16 @@ class EtcdWpPage extends StatelessWidget {
                     width: 10,
                   ),
                   Text(
-                    "（已发版）",
-                    style: TextStyle(fontSize: 14.0, color: Colors.greenAccent),
+                    "（研发中）",
+                    style:
+                        TextStyle(fontSize: 14.0, color: Colors.orangeAccent),
                   ),
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
                 child: Text(
-                  ETCDDESC,
+                  LIVEGBDES,
                   style: TextStyle(fontSize: 16.0, color: Colors.white),
                 ),
               ),
@@ -45,31 +45,43 @@ class EtcdWpPage extends StatelessWidget {
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                    onPressed: () {
-                      launch(APPLESTORE);
-                    },
+                    onPressed: () {},
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
-                        "Apple Store 下载",
+                        "ARM 安装",
                         style: TextStyle(color: Colors.green, fontSize: 20),
                       ),
                     ),
                   ),
                   SizedBox(
-                    width: 30.0,
+                    width: 10.0,
                   ),
                   MaterialButton(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                    onPressed: () {
-                      launch(DMG);
-                    },
+                    onPressed: () {},
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
-                        "DMG 下载",
+                        "AMD 安装",
+                        style: TextStyle(color: Colors.green, fontSize: 20),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  MaterialButton(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(20.0))),
+                    onPressed: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        "Docker 安装",
                         style: TextStyle(color: Colors.green, fontSize: 20),
                       ),
                     ),
@@ -106,8 +118,8 @@ class EtcdWpPage extends StatelessWidget {
   }
 }
 
-class SmallEtcdwpPage extends StatelessWidget {
-  const SmallEtcdwpPage({
+class SmallLiveGBPage extends StatelessWidget {
+  const SmallLiveGBPage({
     Key key,
   }) : super(key: key);
 
@@ -122,7 +134,7 @@ class SmallEtcdwpPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                ETCDNAME,
+                LIVEGBNAME,
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 40.0,
@@ -132,15 +144,15 @@ class SmallEtcdwpPage extends StatelessWidget {
                 width: 10,
               ),
               Text(
-                "（已发版）",
-                style: TextStyle(fontSize: 14.0, color: Colors.greenAccent),
+                "（研发中）",
+                style: TextStyle(fontSize: 14.0, color: Colors.orangeAccent),
               ),
             ],
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
             child: Text(
-              ETCDDESC,
+              LIVEGBDES,
               style: TextStyle(fontSize: 16.0, color: Colors.white),
             ),
           ),
@@ -148,13 +160,11 @@ class SmallEtcdwpPage extends StatelessWidget {
             color: Colors.white,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20.0))),
-            onPressed: () {
-              launch(APPLESTORE);
-            },
+            onPressed: () {},
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
-                "Apple Store 下载",
+                "Docker 安装",
                 style: TextStyle(color: Colors.green, fontSize: 20),
               ),
             ),
