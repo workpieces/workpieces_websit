@@ -4,7 +4,6 @@ import 'package:flutter_workpieces/widgets/bottombar.dart';
 import 'package:flutter_workpieces/widgets/constant.dart';
 import 'package:flutter_workpieces/widgets/navbar.dart';
 import 'package:flutter_workpieces/widgets/responsive.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MyApp());
 
@@ -66,7 +65,7 @@ class MyHomePage extends StatelessWidget {
                     ? SmallHomePage()
                     : HomePage(),
               ),
-              // BottomBar(),
+              BottomBar(),
             ],
           ),
         ),

@@ -1,12 +1,6 @@
-# flutter_workpieces
+# workpieces_websit
 
-简介：flutter_workpieces是**Workpieces LLC**官方网站，采用Flutter 3.0实现。
-
-# 运行项目
-
-```
-flutter run
-```
+简介：workpieces_websit是**Workpieces LLC**官方网站。
 
 # 指定端口启动
 

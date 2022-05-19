@@ -40,7 +40,7 @@ class HomeWebNavbar extends StatelessWidget {
           Row(
             children: <Widget>[
               Text(
-                "首页",
+                "文档手册",
                 style:
                     TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
@@ -64,7 +64,7 @@ class HomeWebNavbar extends StatelessWidget {
                 width: 30,
               ),
               MaterialButton(
-                color: Colors.green,
+                color: Color.fromARGB(255, 20, 105, 195),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(8.0))),
                 onPressed: () {
@@ -109,15 +109,7 @@ class HomeMobileNavbar extends StatelessWidget {
             Row(
               children: <Widget>[
                 Text(
-                  "首页",
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  width: 30,
-                ),
-                Text(
-                  "文档",
+                  "文档手册",
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
