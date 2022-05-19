@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_workpieces/page/HomePage.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_workpieces/page/etcdwp.dart';
 import 'package:flutter_workpieces/widgets/bottombar.dart';
 import 'package:flutter_workpieces/widgets/constant.dart';
 import 'package:flutter_workpieces/widgets/navbar.dart';
@@ -59,11 +60,28 @@ class MyHomePage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Padding(
+                padding: EdgeInsets.symmetric(vertical: 60.0),
+                child: Container(
+                  height: ScrollViewHeight,
+                  child: new Swiper(
+                    itemBuilder: (BuildContext context, int index) {
+                      return new Image.network(
+                        "http://via.placeholder.com/350x150",
+                        fit: BoxFit.fill,
+                      );
+                    },
+                    itemCount: 5,
+                    viewportFraction: 0.8,
+                    scale: 0.8,
+                  ),
+                ),
+              ),
+              Padding(
                 padding: const EdgeInsets.symmetric(
-                    vertical: 80.0, horizontal: 40.0),
+                    vertical: 20.0, horizontal: 40.0),
                 child: ResponsiveWidget.isSmallScreen(context)
-                    ? SmallHomePage()
-                    : HomePage(),
+                    ? SmallEtcdwpPage()
+                    : EtcdWpPage(),
               ),
               BottomBar(),
             ],

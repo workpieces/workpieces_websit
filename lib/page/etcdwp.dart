@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_workpieces/widgets/constant.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomePage extends StatelessWidget {
+class EtcdWpPage extends StatelessWidget {
   List<Widget> pageChildren() {
     return <Widget>[
       Expanded(
@@ -93,8 +93,8 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class SmallHomePage extends StatelessWidget {
-  const SmallHomePage({
+class SmallEtcdwpPage extends StatelessWidget {
+  const SmallEtcdwpPage({
     Key key,
   }) : super(key: key);
 
