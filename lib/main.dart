@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_workpieces/Navbar/Navbar.dart';
 import 'package:flutter_workpieces/page/HomePage.dart';
+import 'package:flutter_workpieces/widgets/constant.dart';
+import 'package:flutter_workpieces/widgets/navbar.dart';
+import 'package:flutter_workpieces/widgets/responsive.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,10 +21,30 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: ResponsiveWidget.isSmallScreen(context)
+          ? AppBar(
+              toolbarHeight: NavagationHeight,
+              backgroundColor: Colors.black,
+              elevation: 0.0,
+              centerTitle: true,
+              title: Text(
+                "Workpieces",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 30,
+                    letterSpacing: 5.0),
+              ),
+            )
+          : PreferredSize(
+              preferredSize: Size(screenSize.width, 1000),
+              child: HomeWebNavbar(),
+            ),
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        width: screenSize.width,
+        height: screenSize.height,
         decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
@@ -35,7 +57,6 @@ class MyHomePage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Navbar(),
               Padding(
                 padding: const EdgeInsets.symmetric(
                     vertical: 20.0, horizontal: 40.0),

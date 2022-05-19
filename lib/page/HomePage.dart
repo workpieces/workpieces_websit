@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_workpieces/constant/constant.dart';
+import 'package:flutter_workpieces/widgets/constant.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
