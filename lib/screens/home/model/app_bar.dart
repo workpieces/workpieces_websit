@@ -10,8 +10,7 @@ class AppBarModel extends Object {
 }
 
 final appbars = [
-  AppBarModel("文档手册", Routes.adbout, 0),
-  AppBarModel("资源下载", Routes.adbout, 0),
+  AppBarModel("资源下载", Routes.download, 0),
   AppBarModel("关于我们", Routes.adbout, 0),
   AppBarModel("Github", "https://github.com/workpieces", 1),
 ];

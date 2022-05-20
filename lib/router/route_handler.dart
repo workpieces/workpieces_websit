@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_workpieces/screens/about/about.dart';
 import 'package:flutter_workpieces/screens/about/webview.dart';
+import 'package:flutter_workpieces/screens/download/download.dart';
 
 import 'package:flutter_workpieces/screens/home/home_screen.dart';
 
@@ -19,7 +20,7 @@ var aboutHandler = Handler(
 
 var downloadHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-    return AboutScreen();
+    return DownloadScreen();
   },
 );
 
