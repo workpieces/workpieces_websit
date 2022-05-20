@@ -4,22 +4,14 @@ import 'package:flutter_workpieces/screens/home/model/software.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Body extends StatelessWidget {
-  const Body({Key key}) : super(key: key);
+  final SoftwareModel cell;
+  const Body({Key key, this.cell}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: size.width,
-      child: ListView.builder(
-        itemCount: softwares.length,
-        itemBuilder: (context, index) {
-          return ResponsiveWidget.isMediumScreen(context)
-              ? SmallItemCell(item: softwares[index])
-              : NormalItemCell(item: softwares[index]);
-        },
-      ),
-    );
+    return ResponsiveWidget.isMediumScreen(context)
+        ? SmallItemCell(item: cell)
+        : NormalItemCell(item: cell);
   }
 }
 
@@ -30,51 +22,65 @@ class NormalItemCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Column(
-          children: [
-            ItemCellTitle(item: item),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20.0),
-              child: Text(
-                item.desc,
-                style: TextStyle(fontSize: 16.0, color: Colors.white),
+        Expanded(
+          flex: 1,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ItemCellTitle(item: item),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: Text(
+                  item.desc,
+                  style: TextStyle(fontSize: 16.0, color: Colors.white),
+                ),
               ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: item.packages
-                  .map(
-                    (pkg, {index}) => Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 30),
-                      child: MaterialButton(
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20.0))),
-                        onPressed: () {
-                          launch(pkg.link);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            pkg.name,
-                            style: TextStyle(color: Colors.green, fontSize: 20),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: item.packages
+                    .map(
+                      (pkg, {index}) => Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: MaterialButton(
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20.0))),
+                          onPressed: () {
+                            launch(pkg.link);
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 15, 30, 15),
+                            child: Text(
+                              pkg.name,
+                              style:
+                                  TextStyle(color: Colors.green, fontSize: 20),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  )
-                  .toList(),
-            ),
-          ],
+                    )
+                    .toList(),
+              ),
+            ],
+          ),
         ),
+        Expanded(
+            flex: 1,
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 40),
+              child: Image.asset(
+                item.logo,
+                fit: BoxFit.fitHeight,
+                height: 350,
+              ),
+            ))
       ],
     );
   }
@@ -92,7 +98,7 @@ class ItemCellTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      verticalDirection: VerticalDirection.down,
       children: [
         Text(
           item.title,
@@ -103,8 +109,11 @@ class ItemCellTitle extends StatelessWidget {
           width: 10,
         ),
         Text(
-          "（已发版）",
-          style: TextStyle(fontSize: 14.0, color: Colors.greenAccent),
+          item.status == 1 ? "（已发版）" : "（研发中）",
+          style: TextStyle(
+              fontSize: 14.0,
+              color:
+                  item.status == 1 ? Colors.greenAccent : Colors.orangeAccent),
         ),
       ],
     );

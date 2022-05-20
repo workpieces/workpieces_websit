@@ -35,7 +35,7 @@ final softwares = [
     "MediaGB是一个基于GB28181标准实现的网络视频平台，支持NAT穿透，支持海康、大华、宇视等品牌的IPC、NVR、DVR接入。支持rtsp/rtmp等视频推流、流转发到国标平台。",
     "（目前暂且无法下载安装，敬请期待。）",
     2,
-    "assets/images/etcd_image.png",
+    "assets/images/livegb_image.png",
     [
       Packge("AMD", ""),
       Packge("ARM", ""),
