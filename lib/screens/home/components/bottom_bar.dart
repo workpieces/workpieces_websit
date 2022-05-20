@@ -47,8 +47,12 @@ class NormalCustomBottomBar extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              Text(
+              SelectableText(
                 KDefaultDescribe.kWorkpieceBusinessDay,
+                cursorColor: Colors.blue,
+                showCursor: true,
+                toolbarOptions: ToolbarOptions(
+                    copy: true, selectAll: true, cut: true, paste: true),
                 style: TextStyle(fontSize: 14.0, color: Colors.white),
               ),
             ],

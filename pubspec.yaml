@@ -12,6 +12,7 @@ dependencies:
   url_launcher: ^5.4.2
   build_runner: ^2.1.11
   json_serializable: ^6.2.0
+  fluro: ^2.0.3
 
 dev_dependencies:
   flutter_test:

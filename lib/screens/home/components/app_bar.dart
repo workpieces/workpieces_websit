@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_workpieces/constant.dart';
+import 'package:flutter_workpieces/router/router.dart';
 import 'package:flutter_workpieces/screens/home/components/menu_item.dart';
 import 'package:flutter_workpieces/screens/home/model/app_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -34,12 +35,9 @@ class CustomAppBar extends StatelessWidget {
                       press: () {
                         switch (item.type) {
                           case 0:
-                            launch(item.link);
+                            Application.router.navigateTo(context, item.link);
                             break;
                           case 1:
-                            launch(item.link);
-                            break;
-                          case 2:
                             launch(item.link);
                             break;
                         }
