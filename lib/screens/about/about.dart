@@ -31,7 +31,10 @@ class AboutScreen extends StatelessWidget {
               child: Text(
                 "关于我们",
                 style: TextStyle(
-                    color: Colors.white, fontSize: 20.0, letterSpacing: 5),
+                  color: Colors.white,
+                  fontSize: 20.0,
+                  letterSpacing: 5,
+                  fontWeight:FontWeight.w400,),
               ),
             ),
           ),
@@ -42,7 +45,11 @@ class AboutScreen extends StatelessWidget {
             child: Text(
               "我们做了很多创业项目，但没有一次成功。\n 我们做了许多功能，但都半途而废。\n 我们希望解决生活中、工作中的痛点。\n 我们希望得到大家的认同和鼓励。",
               style: TextStyle(
-                  color: Colors.white, fontSize: 16.0, letterSpacing: 5),
+                  color: Colors.white,
+                  fontWeight:FontWeight.w400,
+                  fontSize: 16.0,
+                  letterSpacing: 1
+              ),
             ),
           )
         ],
