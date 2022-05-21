@@ -1,7 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_workpieces/components/default_button.dart';
 import 'package:flutter_workpieces/constant.dart';
 import 'package:flutter_workpieces/components/responsive.dart';
+import 'package:mailto/mailto.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CustomBottomBar extends StatelessWidget {
   const CustomBottomBar({Key key}) : super(key: key);
@@ -47,13 +50,22 @@ class NormalCustomBottomBar extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              SelectableText(
-                KDefaultDescribe.kWorkpieceBusinessDay,
-                cursorColor: Colors.blue,
-                showCursor: true,
-                toolbarOptions: ToolbarOptions(
-                    copy: true, selectAll: true, cut: true, paste: true),
-                style: TextStyle(fontSize: 14.0, color: Colors.white),
+              RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  text: "( 周一至周五 9:00-12:00, 13:00-18:00 ) ",
+                  style: TextStyle(fontSize: 14.0, color: Colors.white),
+                  children: [
+                    TextSpan(
+                      text: '  workpieces_app@yeah.net',
+                      style: TextStyle(fontSize: 14, color: Colors.white),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          launchMailto();
+                        },
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -84,6 +96,16 @@ class NormalCustomBottomBar extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  // copy from https://pub.dev/packages/mailto
+  launchMailto() async {
+    final mailtoLink = Mailto(
+      to: ['workpieces_app@yeah.net'],
+      cc: ['workpieces_app@yeah.net', 'tao_shuminX@foxmail.com'],
+      subject: 'Workpieces 商务合作',
+    );
+    await launch('$mailtoLink');
   }
 }
 

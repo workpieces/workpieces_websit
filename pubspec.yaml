@@ -14,6 +14,7 @@ dependencies:
   json_serializable: ^6.2.0
   fluro: ^2.0.3
   flutter_markdown: ^0.6.10
+  mailto: ^2.0.0
 
 dev_dependencies:
   flutter_test:
