@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_workpieces/constant.dart';
 
@@ -9,6 +7,36 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: KDefaultScreenSize.kHomeNavagationHeight,
+        backgroundColor: Colors.black,
+        elevation: 0.0,
+        centerTitle: false,
+        title: Text(
+          "关于我们",
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              fontSize: 30,
+              letterSpacing: 5.0),
+        ),
+      ),
+      body: AboutBody(size: size),
+    );
+  }
+}
+
+class AboutBody extends StatelessWidget {
+  const AboutBody({
+    Key key,
+    @required this.size,
+  }) : super(key: key);
+
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       width: size.width,
       height: size.height,
@@ -24,17 +52,6 @@ class AboutScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                vertical: KDefaultScreenSize.kDefaultTopSpace),
-            child: Center(
-              child: Text(
-                "关于我们",
-                style: TextStyle(
-                    color: Colors.white, fontSize: 20.0, letterSpacing: 5),
-              ),
-            ),
-          ),
           SizedBox(
             height: 20,
           ),

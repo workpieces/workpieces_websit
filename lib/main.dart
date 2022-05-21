@@ -2,7 +2,6 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_workpieces/constant.dart';
 import 'package:flutter_workpieces/router/router.dart';
-import 'package:flutter_workpieces/screens/home/home_screen.dart';
 
 void main() => runApp(AppComponent());
 
