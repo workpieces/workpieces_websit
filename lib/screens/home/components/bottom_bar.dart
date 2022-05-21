@@ -11,7 +11,7 @@ class CustomBottomBar extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       color: Colors.black,
-      child: ResponsiveWidget.isMediumScreen(context)
+      child: ResponsiveWidget.isSmallScreen(context)
           ? SmallCustomBottomBar()
           : NormalCustomBottomBar(),
     );
