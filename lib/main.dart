@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_workpieces/constant.dart';
 import 'package:flutter_workpieces/router/router.dart';
 
+// copy from https://blog.hi917.com/list?cat=11
 void main() => runApp(AppComponent());
 
 class AppComponent extends StatefulWidget {

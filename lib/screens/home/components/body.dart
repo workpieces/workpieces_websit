@@ -9,7 +9,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget.isMediumScreen(context)
+    return ResponsiveWidget.isSmallScreen(context)
         ? SmallItemCell(item: cell)
         : NormalItemCell(item: cell);
   }
@@ -130,25 +130,8 @@ class SmallItemCell extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                item.title,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40.0,
-                    color: Colors.white),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                item.status.toString(),
-                style: TextStyle(fontSize: 14.0, color: Colors.greenAccent),
-              ),
-            ],
+          ItemCellTitle(
+            item: item,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -177,6 +160,9 @@ class SmallItemCell extends StatelessWidget {
                 style: TextStyle(color: Colors.green, fontSize: 20),
               ),
             ),
+          ),
+          SizedBox(
+            height: 30,
           ),
         ],
       ),

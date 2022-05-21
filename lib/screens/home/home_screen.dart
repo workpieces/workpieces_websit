@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: ResponsiveWidget.isMediumScreen(context)
+      appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
               toolbarHeight: KDefaultScreenSize.kHomeNavagationHeight,
               backgroundColor: Colors.black,
