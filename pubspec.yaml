@@ -5,6 +5,9 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.1.0 <3.0.0"
 
+
+# coyy from https://medium.com/@javico2609/5-libraries-that-make-flutter-development-easier-and-faster-d51cee875c33
+# 5 Libraries that make Flutter development easier and faster.
 dependencies:
   flutter:
     sdk: flutter
@@ -13,8 +16,11 @@ dependencies:
   build_runner: ^2.1.11
   json_serializable: ^6.2.0
   fluro: ^2.0.3
-  flutter_markdown: ^0.6.10
-  mailto: ^2.0.0
+  flutter_markdown: ^0.6.10 
+  mailto: ^2.0.0 
+  cache_image: ^1.0.5
+  dio: ^4.0.6
+  rxdart: ^0.27.3
 
 dev_dependencies:
   flutter_test:
