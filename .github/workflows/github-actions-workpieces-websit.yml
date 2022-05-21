@@ -1,17 +1,30 @@
-name: GitHub Actions Demo
-on: [push]
+name: Flutter Web
+on:
+  push:
+    branches:
+      - master
 jobs:
-  Explore-GitHub-Actions:
+  build:
+    name: Build Web
+    env:
+      my_secret: ${{secrets.workpieces_websit_secret}}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "dev"
+      - run: flutter config --enable-web
+      - run: flutter pub get
+      - run: flutter build web --release
+      - run: |
+          cd build/web
+          git init
+          git config --global user.email taoshumin@foxmail.com
+          git config --global user.name taoshumin_vendor
+          git status
+          git remote add origin https://${{secrets.workpieces_websit_secret}}@github.com/workpieces/workpieces_websit.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "update"
+          git push origin gh-pages -f
